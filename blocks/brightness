@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cb=$(cat /sys/class/backlight/intel_backlight/brightness)    
+nb=$(($cb ${1:?Specify +/- value brightness increment}))    
+tee /sys/class/backlight/intel_backlight/brightness <<< "$nb"

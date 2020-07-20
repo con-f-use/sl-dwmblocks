@@ -1,0 +1,13 @@
+#!/bin/sh
+# More sensible defaults for grep.
+
+export PATH="/bin:/usr/bin:/usr/local/bin:/run/current-system/sw/bin"
+exec grep \
+  --color=auto \
+  --devices=skip \
+  --binary-files=without-match \
+  --exclude-dir venv --exclude-dir .tox --exclude-dir .pytest_cache \
+  --exclude-dir .eggs \
+  --exclude-dir .git --exclude-dir .direnv \
+  "$@"
+

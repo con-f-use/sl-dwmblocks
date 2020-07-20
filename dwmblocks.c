@@ -75,7 +75,7 @@ void getcmd(const Block *block, char *output)
 		return;
 	char c;
 	int i = strlen(block->icon);
-	fgets(output+i, CMDLENGTH-(strlen(delim)+1), cmdf);
+	char * _ = fgets(output+i, CMDLENGTH-(strlen(delim)+1), cmdf);
 	remove_all(output, '\n');
 	i = strlen(output);
     if ((i > 0 && block != &blocks[LENGTH(blocks) - 1]))
